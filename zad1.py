@@ -27,5 +27,4 @@ def solve_system_LU(L,U,b):
 
     return x
 
-
 print(solve_system_LU(L,U,b))

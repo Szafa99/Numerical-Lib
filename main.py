@@ -3,8 +3,13 @@ from gaus import Gaus
 
 
 g = Gaus()
-g.elimination()
+g.forwardSub()
+print(g.a)
 g.backSub()
 print()
-print("should be:")
-g.checkResult()
+print(g.a)
+
+
+#g.showResult()
+#print("should be:")
+#g.checkResult()

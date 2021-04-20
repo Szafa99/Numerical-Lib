@@ -55,8 +55,7 @@ def pivot_matrix(M):
     return id_mat
 
 def lu_decomposition(A):
-    """Performs an LU Decomposition of A (which must be square)                                                                                                                                                                                        
-    into PA = LU. The function returns P, L and U."""
+
     n = len(A)
 
     # Create zero matrices for L and U                                                                                                                                                                                                                 
@@ -72,12 +71,12 @@ def lu_decomposition(A):
         # All diagonal entries of L are set to unity                                                                                                                                                                                                   
         L[j][j] = 1.0
 
-        # LaTeX: u_{ij} = a_{ij} - \sum_{k=1}^{i-1} u_{kj} l_{ik}                                                                                                                                                                                      
+                                                                                                                                                                                  
         for i in range(j+1):
             s1 = sum(U[k][j] * L[i][k] for k in range(i))
             U[i][j] = PA[i][j] - s1
 
-        # LaTeX: l_{ij} = \frac{1}{u_{jj}} (a_{ij} - \sum_{k=1}^{j-1} u_{kj} l_{ik} )                                                                                                                                                                  
+                                                                                                                                                               
         for i in range(j, n):
             s2 = sum(U[k][j] * L[i][k] for k in range(j))
             L[i][j] = (PA[i][j] - s2) / U[j][j]

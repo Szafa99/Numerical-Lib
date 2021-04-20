@@ -30,13 +30,12 @@ class Gaus:
 
 
 
-    def elimination(self):
+    def forwardSub(self):
         # k - diagonalne elementy od zerowej do przedosttatniej kolumny
         # i 0- kolejne wiersze od pierwszego do ostatniego
         # j - przechodi przez elementy danego wiersza
         for k in range(self.n - 1):
             for i in range(k + 1, self.n):
-                #self.croutMethod(self.a[i],self.a[k,k],i)
                 if self.a[k,k] == 0: continue
                 mnoznik = self.a[i, k] / self.a[k, k ]
                 
@@ -62,9 +61,11 @@ class Gaus:
                 self.result[i] = 0
             else:
                 self.result[i] = (self.b[i] - sumX) / self.a[i,i]
+
+
+    def showResult(self):
         print("Wynik :")  
         print(self.result)
-
 
 
 # Place the bigest modulo at the first position of the array
@@ -82,7 +83,7 @@ class Gaus:
 
 
 
-    def Croutelimination(self):
+    def CroutforwardSub(self):
         # k - diagonalne elementy od zerowej do przedosttatniej kolumny
         # i 0- kolejne wiersze od pierwszego do ostatniego
         # j - przechodzi przez elementy danego wiersza
